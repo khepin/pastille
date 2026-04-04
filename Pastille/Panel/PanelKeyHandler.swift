@@ -5,16 +5,19 @@ final class PanelKeyHandler {
     private let appState: AppState
     private let onDismiss: @MainActor () -> Void
     private let onPaste: @MainActor (HistoryItem, Bool) -> Void
+    private let onOpenSettings: @MainActor () -> Void
     private nonisolated(unsafe) var localMonitor: Any?
 
     init(
         appState: AppState,
         onDismiss: @escaping @MainActor () -> Void,
-        onPaste: @escaping @MainActor (HistoryItem, Bool) -> Void
+        onPaste: @escaping @MainActor (HistoryItem, Bool) -> Void,
+        onOpenSettings: @escaping @MainActor () -> Void = {}
     ) {
         self.appState = appState
         self.onDismiss = onDismiss
         self.onPaste = onPaste
+        self.onOpenSettings = onOpenSettings
         start()
     }
 
@@ -36,6 +39,10 @@ final class PanelKeyHandler {
         let keyCode = event.keyCode
 
         switch keyCode {
+        case 43 where event.modifierFlags.contains(.command): // Cmd+,
+            onOpenSettings()
+            return nil
+
         case 53: // Escape
             onDismiss()
             return nil

@@ -83,6 +83,9 @@ final class PanelController {
             self?.hide()
         } onPaste: { [weak self] item, plainTextOnly in
             self?.onPaste?(item, plainTextOnly)
+        } onOpenSettings: { [weak self] in
+            self?.hide()
+            NSApp.delegate?.perform(Selector(("openSettings")))
         }
 
         // Monitor clicks outside the panel
