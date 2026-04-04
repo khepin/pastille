@@ -234,7 +234,6 @@
 			name = Pastille;
 			packageProductDependencies = (
 				26F66D3C4B5134B1E7891EDC /* KeyboardShortcuts */,
-				AD0D8038B090498351FED731 /* Sauce */,
 			);
 			productName = Pastille;
 			productReference = B218E5D9507DF5C23599D7E0 /* Pastille.app */;
@@ -262,7 +261,6 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				78C2706DE3CE9A8DA45BDE92 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
-				B488E777853B7784522DAE54 /* XCRemoteSwiftPackageReference "Sauce" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1424DF7406F6619CA9DED4BE /* Products */;
@@ -517,14 +515,6 @@
 				minimumVersion = 2.1.0;
 			};
 		};
-		B488E777853B7784522DAE54 /* XCRemoteSwiftPackageReference "Sauce" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Clipy/Sauce";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.4.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -532,11 +522,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 78C2706DE3CE9A8DA45BDE92 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
-		};
-		AD0D8038B090498351FED731 /* Sauce */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B488E777853B7784522DAE54 /* XCRemoteSwiftPackageReference "Sauce" */;
-			productName = Sauce;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
