@@ -1,11 +1,10 @@
 import SwiftUI
-import KeyboardShortcuts
 
 struct ShortcutSettingsView: View {
     var body: some View {
         Form {
             Section {
-                KeyboardShortcuts.Recorder("Show clipboard panel:", name: .showPanel)
+                ShortcutRecorderView(label: "Show clipboard panel:")
             } header: {
                 Text("Keyboard Shortcuts")
             } footer: {

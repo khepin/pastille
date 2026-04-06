@@ -1,16 +1,8 @@
-import KeyboardShortcuts
-
 @MainActor
 final class HotkeyManager {
-    private let onToggle: @MainActor () -> Void
+    private let hotkeyManager: GlobalHotkeyManager
 
     init(onToggle: @escaping @MainActor () -> Void) {
-        self.onToggle = onToggle
-
-        KeyboardShortcuts.onKeyDown(for: .showPanel) { [weak self] in
-            Task { @MainActor in
-                self?.onToggle()
-            }
-        }
+        hotkeyManager = GlobalHotkeyManager(onKeyDown: onToggle)
     }
 }

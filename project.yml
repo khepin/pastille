@@ -6,11 +6,6 @@ options:
   xcodeVersion: "16.0"
   minimumXcodeGenVersion: "2.40"
 
-packages:
-  KeyboardShortcuts:
-    url: https://github.com/sindresorhus/KeyboardShortcuts
-    from: "2.1.0"
-
 targets:
   Pastille:
     type: application
@@ -29,5 +24,3 @@ targets:
         CURRENT_PROJECT_VERSION: "1"
         ENABLE_APP_SANDBOX: false
         SWIFT_STRICT_CONCURRENCY: complete
-    dependencies:
-      - package: KeyboardShortcuts
